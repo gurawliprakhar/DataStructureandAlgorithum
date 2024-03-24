@@ -4,6 +4,12 @@ import java.util.Scanner;
 //Practicing logical building using pattern
 
 public class Solution {
+   /*
+    *****
+    *****
+    *****
+    *****
+    */
     static void print(int n){
         for(int i=1; i<=5; i++){
            for(int j=1; j<=5; j++){
@@ -12,7 +18,13 @@ public class Solution {
             System.out.println();
         }
     }
-
+/*
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+ */
     static void printNum(int n){
         for(int i=1; i<=5; i++){
             for(int j=1; j<=5; j++){
@@ -21,7 +33,13 @@ public class Solution {
             System.out.println();
         }
     }
-
+/*
+ * * * * *
+ *       *
+ *       *
+ *       *
+ * * * * *
+ */
     static void holloRectangle(int n){
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
@@ -35,6 +53,13 @@ public class Solution {
         }
     }
 
+    /*
+    01 02 03 04 05
+    06 07 08 09 10
+    11 12 13 14 15
+    16 17 18 19 20
+    21 22 23 24 25
+     */
     static void printAscending(int n){
         int count = 1;
         for(int i=0; i<n; i++){
@@ -134,7 +159,13 @@ public class Solution {
             System.out.println();
         }
     }
-
+/*
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+ */
     static void Pyramid(int n){
         for(int i=0; i<n; i++){
             //k used for spaces
@@ -147,7 +178,13 @@ public class Solution {
             System.out.println();
         }
     }
-
+/*
+     *
+   *  *
+  *    *
+ *       *
+ * * * * *
+ */
     static void hollowTriangle(int n){
         for(int i=0; i<n; i++){
             //k used for spaces
@@ -224,12 +261,35 @@ public class Solution {
      */
 
     static void triangle3(int n){
-
+      for(int i=1; i<=n; i++){
+          int count = i;
+          for(int j=1; j<=(n-1)+1; j++){
+              if(i==1 || j==1 || j==(n-1)+1){
+                  System.out.print(count++ + " ");
+              }else{
+                  System.out.println("  ");
+              }
+          }
+      }
     }
-
+/*
+*
+* *
+* * * * *
+*  * * * * * *
+* * * * * * * * *
+ */
+    static void triangle4(int n){
+      for(int i=1; i<=n; i++){
+          for(int j=1; j<=(2*i)-1; j++){
+              System.out.print("* ");
+          }
+          System.out.println();
+        }
+    }
     public static void main(String[] args) {
         int n = 5;
         Solution sol = new Solution();
-        sol.triangle3(n);
+        sol.triangle4(n);
     }
 }
