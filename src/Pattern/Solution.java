@@ -287,9 +287,189 @@ public class Solution {
           System.out.println();
         }
     }
-    public static void main(String[] args) {
+   /*        *
+         * * *
+        * * * * *
+      * * * * * * *
+    * * * * * * * * *
+
+    */
+    static void triangle5(int n) {
+      for(int i=1; i<=n; i++){
+          for (int k=1; k<=(n-i); k++){
+              System.out.print(" ");
+          }
+          for(int j=1; j<=(2*i)-1; j++){
+              System.out.print("* ");
+          }
+          System.out.println();
+      }
+    }
+   /*
+   1
+   1 2 1
+   1 2 3 2 1
+   1 2 3 4 3 2 1
+   1 2 3 4 5 4 3 2 1
+    */
+    static void Pattern1(int n){
+        for(int i=1;i<=n; i++){
+            int count = 1;
+            for(int j=1; j<=(2*i)-1; j++){
+                if (j < i) {
+                    System.out.print(count++ + " ");
+                }else{
+                    System.out.print(count-- + " ");
+                }
+            }
+            System.out.println();
+        }
+
+   }
+   /*
+   1 1 1 1 1 2
+   3 2 2 2 2 2
+   3 3 3 3 3 4
+   5 4 4 4 4 4
+   5 5 5 5 5 6
+    */
+     static void Pattern2(int n){
+         for(int i=1; i<=n; i++) {
+             if(i%2 == 0){
+                 System.out.print(i+1 + " ");
+             }
+             for (int j = 1; j <= n; j++) {
+                 System.out.print(i + " ");
+             }
+             if (i % 2 != 0) {
+                 System.out.print(i+1 + " ");
+             }
+             System.out.println();
+         }
+   }
+   /*
+   1
+   2 2
+   3 3 3
+   4 4 4 4
+   5 5 5 5 5
+   6 6 6 6
+   7 7 7
+   8 8
+   9
+    */
+   static void Pattern3(int n){
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+        for(int i=1; i<=n-1; i++){
+            for(int j=1; j<=n-i; j++){
+                System.out.print(n-i);
+            }
+            System.out.println();
+        }
+     }
+   /*
+   1
+   2 3
+   4 5 6
+   7 8 9 10
+   11 12 13 14 15
+    */
+   static void Pattern4(int n){
+       int count = 1;
+      for(int i=1; i<=n; i++){
+          for(int j=1; j<=i; j++){
+              System.out.print(count++ + " ");
+              System.out.print("*");
+          }
+          System.out.println();
+      }
+   }
+
+  /*
+  1
+  3*2
+  6*5*4
+  10*9*8*7
+  15*14*13*12*11
+   */
+  static void Pattern5(int n){
+      for(int i=1; i<=n; i++){
+          int count = i*(i+1)/2;
+          for(int j=1; j<=i; j++){
+              System.out.print(count--);
+              if(j <= i-1) {
+                  System.out.print("*");
+              }
+          }
+          System.out.println();
+      }
+   }
+
+  /*
+  A
+  B B
+  C C C
+  D D D D
+  E E E E E
+   */
+   public static void alphabeticPattern1(int n){
+       char ch = 'A';
+     for(int i=1; i<=n; i++){
+         for(int j=1; j<=i; j++){
+             System.out.print(ch);
+         }
+         ch++;
+         System.out.println();
+     }
+  }
+ /*
+ A
+ A B
+ A B C
+ A B C D
+ A B C D E
+  */
+  public static void alphabeticPattern2(int n){
+      for(int i=1; i<=n; i++){
+          char ch = 'A';
+          for(int j=1; j<=i; j++){
+              System.out.print(ch++);
+          }
+          System.out.println();
+      }
+ }
+ /*
+ A
+ C  B
+ D E F
+ J I H G
+ K L M N O
+  */
+ public static void alphabeticPattern3(int n) {
+     char ch = 'A';
+     for (int i = 0; i <= n; i++) {
+         if (i % 2 == 0) {
+             char charRev = (char) (ch + i - 1);
+             for (int j = 1; j <= i; j++) {
+                 System.out.print(charRev-- + " ");
+                 ch++;
+             }
+         } else {
+             for (int j = 1; j <= i; j++) {
+                 System.out.print(ch++ + " ");
+             }
+         }
+         System.out.println();
+     }
+ }
+     public static void main(String[] args) {
         int n = 5;
         Solution sol = new Solution();
-        sol.triangle4(n);
+        sol.alphabeticPattern3(n);
     }
 }
