@@ -117,10 +117,28 @@ public class Factorial {
             i++;
         }
     }
+    public static int binomialCoefficient(int n,int r){
+      int fact_n = fact(n);
+      int fact_r = fact(r);
+      int fact_nmr = fact(n-r);
+
+      int binomialCoefficient = fact_n / (fact_r * fact_nmr);
+      return binomialCoefficient;
+     }
+     //convert binary to decimal
+    static void BinToDec(int n){
+        int mynum=n,pow=0, dec=0;
+        while(n != 0){
+            int lastDigit = n%10;
+            dec =  dec+(lastDigit * (int) Math.pow(2,pow));
+            pow++;
+            n = n/10;
+        }
+        System.out.println("decimal of "+mynum + " =" + dec);
+    }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-
-        primeFactors(n);
+        BinToDec(n);
     }
 }

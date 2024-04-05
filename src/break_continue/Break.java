@@ -1,3 +1,5 @@
+package break_continue;
+
 import java.util.Scanner;
 
 //keep entering numbers till user enters a multiple of 10
