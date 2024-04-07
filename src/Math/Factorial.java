@@ -136,9 +136,32 @@ public class Factorial {
         }
         System.out.println("decimal of "+mynum + " =" + dec);
     }
-    public static void main(String[] args) {
+    static void decTOBin(int n){
+        int myNum = n;
+        int pow = 0;
+        int binNum = 0;
+        while(n>0){
+            int rem = n%2;//find remainder
+            binNum = binNum + (rem * (int)Math.pow(10,pow));
+            pow++;
+            n = n/2;//find quotient
+        }
+        System.out.println("binary form of "+myNum+" = "+binNum);
+    }
+
+    static boolean isPalindrome(int n){
+        int orig = n;
+        int rev = 0;
+        while(n!=0){
+            int rem = n%10;
+            rev = rev*10+rem;
+            n = n/10;
+        }
+        return orig==rev;
+    }
+        public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        BinToDec(n);
+        System.out.println(isPalindrome(n));
     }
 }
