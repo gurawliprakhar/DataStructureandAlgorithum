@@ -58,10 +58,54 @@ public class RemoveSpaces  {
         }
         return t;
     }
+    static char[] toCharArray(String s){
+        char c[] = new char[s.length()];
+        for(int i=0; i<s.length(); i++){
+            c[i] = s.charAt(i);
+        }
+        return  c;
+    }
+    static int countVowel(String s){
+        int count = 0;
+        for(int i=0;i<s.length(); i++){
+            char c = s.charAt(i);
+            if(c == 'a' ||  c == 'A' || c == 'e' ||  c == 'E' ||
+                    c == 'i' ||  c == 'I' || c == 'o' ||  c == 'O'
+            || c=='u' || c=='U'){
+              count++;
+          }
+      }
+      return count;
+    }
+    static String reverse(String s){
+      String t = "";
+      for(int i=s.length()-1; i>=0; i--){
+           t += s.charAt(i);
+      }
+      return t;
+    }
+    static boolean isPalindrome(String s){
+      if(s.equals(reverse(s))) {
+          return true;
+      }
+        return false;
+    }
+    static void printAllSubstring(String st){
+        int n = st.length();
+       for(int len =1; len<=n; len++ ){
+           for(int s=0; s<=(n-len); s++){
+               for(int e=s; e<=(s+len)-1; e++){
+                   System.out.print(st.charAt(e));
+               }
+               System.out.println();
+           }
+       }
+    }
+   
 
     public static void main(String[] args) {
-        String s = "   Haaw   ";
-        System.out.println(trim(s));
+        String st = "parul";
+        printAllSubstring(st);
         }
     }
 
