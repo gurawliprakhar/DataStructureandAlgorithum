@@ -1,5 +1,7 @@
 package Recursion;
 
+import java.util.Scanner;
+
 public class Solution {
     static int findFact(int n){
         if(n==0 || n==1) return 1;
@@ -38,8 +40,34 @@ public class Solution {
        return isPalndrome(s,i+1,j-1);
     }
 
+    static int sumOfArray(int ar[], int i){
+        if(i==ar.length) return 0;
+        return sumOfArray(ar,i+1)+ar[i];
+    }
+    static int joseph(int n, int k){
+        if(n==1) return 0;
+      return (joseph(n-1,k)+k)%n;
+    }
+
+    static void balPara(char ar[], int n, int i, int o, int c){
+        if(i == ar.length) {
+            System.out.println(ar);
+            return;
+        }
+        if(o < n){
+            ar[i] = '(';
+            balPara(ar, n, i + 1, o + 1, c);
+        }
+        if(c < o){
+            ar[i] = ')';
+            balPara(ar, n, i + 1, o, c + 1);
+        }
+    }
+
     public static void main(String[] args) {
-        String s = "madam";
-        System.out.println(isPalndrome(s,0,s.length()-1));
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        char ar[] = new char[n * 2];
+        balPara(ar, n, 0, 0, 0);
     }
 }
